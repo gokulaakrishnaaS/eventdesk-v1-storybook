@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react-vite'
-import '../src/index.css'; // This must point to your Tailwind entry file
+import '../src/index.css'; 
+import 'cally';
 
 const preview: Preview = {
   parameters: {

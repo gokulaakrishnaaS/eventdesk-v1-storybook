@@ -21,5 +21,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts"]
+  // "include": ["vite.config.ts","global.d.ts","custom-element.d.ts","./src/custom-element.d.ts"],
+    "include": ["vite.config.ts","src", "global.d.ts","src/global.d.ts","src/custom-element.d.ts","custom-element.d.ts"]
+
 }
