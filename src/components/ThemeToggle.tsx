@@ -1,5 +1,5 @@
 // CalendarRangePicker.tsx
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import 'cally'
 
 
@@ -7,9 +7,17 @@ const ThemeToggle: React.FC = () => {
 
     const [isDark, setIsDark] = useState(false);
 
+    useEffect(() => {
+        // Set initial theme based on system preference or default
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const currentTheme = prefersDark ? 'synthwave' : 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        setIsDark(prefersDark);
+    }, []);
+
     const toggleTheme = () => {
-        const theme = isDark ? 'light' : 'synthwave';
-        document.documentElement.setAttribute('data-theme', theme);
+        const newTheme = isDark ? 'light' : 'synthwave';
+        document.documentElement.setAttribute('data-theme', newTheme);
         setIsDark(!isDark);
     };
 
@@ -18,7 +26,10 @@ const ThemeToggle: React.FC = () => {
     return (
         <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
-            <input type="checkbox" className="theme-controller" value="synthwave" />
+            <input type="checkbox"
+        checked={isDark}
+        onChange={toggleTheme} />
+
 
             {/* sun icon */}
             <svg

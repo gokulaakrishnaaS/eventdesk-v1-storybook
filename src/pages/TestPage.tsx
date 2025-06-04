@@ -3,15 +3,35 @@ import React from "react";
 import CalendarRangePicker from "../components/CalendarRangePicker";
 import Accordion from "../components/Accordion";
 import ThemeToggle from "../components/ThemeToggle";
+import Button from "../components/Button";
 
 const TestPage: React.FC = () => {
   return (
-    <div className="p-4">
-      <ThemeToggle />
+    <div className="relative min-h-screen bg-base-100 p-6">
+      {/* Theme Toggle in top-right corner */}
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
+
       <h1 className="text-2xl font-bold mb-4">Test Page</h1>
       <p className="mb-4">This is a test page to demonstrate the Date Range Picker.</p>
-      <Accordion />
-      <CalendarRangePicker />
+
+      {/* Two-column layout */}
+      <div className="flex flex-col md:flex-row gap-6 mt-6">
+        {/* Left Section: Buttons + Accordion */}
+        <div className="flex-1 space-y-6">
+          <div className="space-x-4">
+            <button className="btn btn-xl">Large</button>
+            <Button />
+          </div>
+          <Accordion />
+        </div>
+
+        {/* Right Section: Calendar */}
+        <div className="flex-1">
+          <CalendarRangePicker />
+        </div>
+      </div>
     </div>
   );
 };
