@@ -4,6 +4,8 @@ import CalendarRangePicker from "../components/CalendarRangePicker";
 import Accordion from "../components/Accordion";
 import ThemeToggle from "../components/ThemeToggle";
 import Button from "../components/Button";
+import CountDown from "../components/CountDown";
+import Table from "../components/Table";
 
 const TestPage: React.FC = () => {
   return (
@@ -20,11 +22,14 @@ const TestPage: React.FC = () => {
       <div className="flex flex-col md:flex-row gap-6 mt-6">
         {/* Left Section: Buttons + Accordion */}
         <div className="flex-1 space-y-6">
+          <CountDown />
           <div className="space-x-4">
             <button className="btn btn-xl">Large</button>
             <Button />
           </div>
           <Accordion />
+
+          <Table />
         </div>
 
         {/* Right Section: Calendar */}

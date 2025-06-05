@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import CalendarRangePicker from '../components/CalendarRangePicker';
-import 'cally'; // ensures the web component is registered
 
 const meta: Meta<typeof CalendarRangePicker> = {
   title: 'Components/CalendarRangePicker',
