@@ -10,13 +10,13 @@ const ThemeToggle: React.FC = () => {
     useEffect(() => {
         // Set initial theme based on system preference or default
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const currentTheme = prefersDark ? 'synthwave' : 'light';
+        const currentTheme = prefersDark ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', currentTheme);
         setIsDark(prefersDark);
     }, []);
 
     const toggleTheme = () => {
-        const newTheme = isDark ? 'light' : 'synthwave';
+        const newTheme = isDark ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', newTheme);
         setIsDark(!isDark);
     };

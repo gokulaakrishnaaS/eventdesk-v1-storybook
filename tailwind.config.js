@@ -3,6 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    './node_modules/react-daisyui/dist/**/*.js',
   ],
   theme: {
     extend: {
@@ -13,6 +14,23 @@ export default {
   },
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ['light', 'synthwave'], // or any two themes you want
+    themes: [
+      {
+        mytheme: {
+          primary: "#4F46E5",      // Customize this (e.g., Indigo-600)
+          secondary: "#EC4899",    // Customize this (e.g., Pink-500)
+          accent: "#37cdbe",
+          neutral: "#3d4451",
+          "base-100": "#ffffff",
+          info: "#3ABFF8",
+          success: "#36D399",
+          warning: "#FBBD23",
+          error: "#F87272",
+        },
+      },
+      'light', 
+      "dark", // you can include other themes too
+    ],
+   
   },
 }
