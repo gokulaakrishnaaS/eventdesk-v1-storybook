@@ -1,6 +1,5 @@
 // CalendarRangePicker.tsx
 import React, {useState,useEffect} from 'react';
-import 'cally'
 
 
 const ThemeToggle: React.FC = () => {
@@ -8,7 +7,6 @@ const ThemeToggle: React.FC = () => {
     const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
-        // Set initial theme based on system preference or default
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const currentTheme = prefersDark ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', currentTheme);
@@ -25,7 +23,6 @@ const ThemeToggle: React.FC = () => {
 
     return (
         <label className="swap swap-rotate">
-            {/* this hidden checkbox controls the state */}
             <input type="checkbox"
         checked={isDark}
         onChange={toggleTheme} />
