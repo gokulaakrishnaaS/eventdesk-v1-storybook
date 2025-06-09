@@ -5,11 +5,12 @@ import CalendarRangePicker from "../components/CalendarRangePicker";
 import DaisyThemeToggle from "../components/DaisyThemeToggle";
 
 // Direct React-DaisyUI imports
-import { Button } from "react-daisyui";
+import { Button,Toggle } from "react-daisyui";
 import DaisyCountDown from "../components/DaisyCountDown";
 import DaisyStats from "../components/DaisyStats";
 import DaisyTable from "../components/DasiyTable";
-
+import DaisySteps from "../components/DaisySteps";
+import DaisyToggle from "../components/DaisyToggle";
 
 
 const DaisyTestPage: React.FC = () => {
@@ -37,6 +38,9 @@ const DaisyTestPage: React.FC = () => {
         <DaisyCountDown />
         <DaisyStats />
         <DaisyTable />
+        <DaisySteps />
+        <Toggle />
+        <DaisyToggle />
         </div>
 
         {/* Right Section: Calendar */}
